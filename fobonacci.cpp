@@ -1,29 +1,31 @@
 #include <iostream>
-using namespace std;
+
+// Función recursiva para calcular el n-ésimo número de Fibonacci
+long long fibonacci(int n) {
+    // Casos base
+    if (n == 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    }
+    // Caso recursivo
+    else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
 
 int main() {
-    int n;
-    long a = 0, b = 1, c;
+    int limite;
 
-    cout << "Escribe el numero de elementos: ";
-    cin >> n;
+    std::cout << "Introduce el limite para la secuencia de Fibonacci: ";
+    if (!(std::cin >> limite) || limite < 0) {
+        std::cout << "Entrada no valida. Debe ser un numero entero no negativo.\n";
+        return 1;
+    }
 
-    cout << "Serie de Fibonacci: ";
-    
-    for (int i = 1; i <= n; i++) {
-        if (i == 1) {
-            cout << a << " ";
-            continue;
-        }
-        if (i == 2) {
-            cout << b << " ";
-            continue;
-        }
-        
-        c = a + b;
-        a = b;
-        b = c;
-        cout << c << " ";
+    std::cout << "\n";
+    for (int i = 0; i <= limite; ++i) {
+        std::cout << "Fibonacci(" << i << ") = " << fibonacci(i) << "\n";
     }
 
     return 0;
