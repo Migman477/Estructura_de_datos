@@ -1,6 +1,6 @@
 #include <iostream>
 
-// Función recursiva para calcular el n-ésimo número de Fibonacci
+
 long long fibonacci(int n) {
     // Casos base
     if (n == 0) {
