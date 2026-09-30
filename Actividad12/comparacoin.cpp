@@ -19,7 +19,7 @@ void selectionSort(vector<int>& arr) {
         int min_idx = i;
         
         for (int j = i + 1; j < n; j++) {
-            comparaciones++; // Contamos cada comparación
+            comparaciones++; 
             if (arr[j] < arr[min_idx]) {
                 min_idx = j;
             }
@@ -30,7 +30,7 @@ void selectionSort(vector<int>& arr) {
             int temp = arr[i];
             arr[i] = arr[min_idx];
             arr[min_idx] = temp;
-            intercambios++; // Contamos el intercambio real
+            intercambios++; 
         }
         
         if (n <= 10) {
